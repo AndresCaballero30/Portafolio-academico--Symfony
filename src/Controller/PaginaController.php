@@ -37,10 +37,10 @@ class PaginaController extends AbstractController
     public function materias(): Response
     {
         $materias = [
-            ['nombre' => 'Programación Avanzada', 'nota' => 82],
-            ['nombre' => 'Base de Datos II',       'nota' => 71],
-            ['nombre' => 'Redes de Computadoras',  'nota' => 68],
-            ['nombre' => 'Inglés Técnico',         'nota' => 45],
+            ['nombre' => 'Desarrollo Web Fullstack', 'nota' => 95],
+            ['nombre' => 'Arquitectura de Software', 'nota' => 88],
+            ['nombre' => 'Sistemas Operativos',     'nota' => 74],
+            ['nombre' => 'Inteligencia Artificial',  'nota' => 91],
         ];
 
         return $this->render('pagina/materias.html.twig', [
