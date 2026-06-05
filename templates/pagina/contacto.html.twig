@@ -1,0 +1,29 @@
+{# templates/pagina/contacto.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block titulo %}Contacto{% endblock %}
+
+{% block contenido %}
+    <h2>Formulario de Contacto</h2>
+    <p style="background:#fff3cd; border:1px solid #ffc107; padding:12px; border-radius:6px; color:#856404; font-size:14px;">
+        ⚠ Este formulario es demostrativo. En Symfony el procesamiento requiere el Form Component.
+    </p>
+
+    <form action="#" method="POST" style="max-width:480px; margin-top:20px;">
+        <div style="margin-bottom:16px;">
+            <label style="display:block; font-weight:600; color:#1a3c5e; margin-bottom:5px; font-size:0.85rem;">Nombre completo</label>
+            <input type="text" name="nombre" placeholder="Tu nombre completo" style="width:100%; padding:10px 14px; border:1.5 solid #ccc; border-radius:6px; font-size:15px; font-family:inherit;">
+        </div>
+        <div style="margin-bottom:16px;">
+            <label style="display:block; font-weight:600; color:#1a3c5e; margin-bottom:5px; font-size:0.85rem;">Correo electrónico</label>
+            <input type="email" name="email" placeholder="tu@correo.com" style="width:100%; padding:10px 14px; border:1.5px solid #ccc; border-radius:6px; font-size:15px; font-family:inherit;">
+        </div>
+        <div style="margin-bottom:20px;">
+            <label style="display:block; font-weight:600; color:#1a3c5e; margin-bottom:5px; font-size:0.85rem;">Mensaje</label>
+            <textarea name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." style="width:100%; padding:10px 14px; border:1.5px solid #ccc; border-radius:6px; font-size:15px; font-family:inherit; resize:vertical; min-height:100px;"></textarea>
+        </div>
+        <button type="submit" style="background:#1a3c5e; color:white; padding:12px 28px; border:none; border-radius:20px; cursor:pointer; font-size:15px; font-weight:600;">
+            Enviar mensaje
+        </button>
+    </form>
+{% endblock %}

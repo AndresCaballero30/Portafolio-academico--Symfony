@@ -1,0 +1,34 @@
+{# templates/pagina/materias.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block titulo %}Mis Materias{% endblock %}
+
+{% block contenido %}
+    <h2>Materias del semestre</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Materia</th>
+                <th>Nota</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for materia in materias %}
+                <tr style="background: {{ loop.index is even ? '#f2f2f2' : 'white' }}">
+                    <td>{{ materia.nombre }}</td>
+                    <td style="text-align:center; font-weight:bold;">
+                        {{ materia.nota | number_format(1) }}
+                    </td>
+                    <td style="text-align:center;">
+                        {{ materia.nota >= 51 ? 'Aprobada' : 'Reprobada' }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">No hay materias registradas.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

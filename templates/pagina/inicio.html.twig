@@ -1,0 +1,10 @@
+{# templates/pagina/inicio.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block titulo %}Inicio — {{ nombre }}{% endblock %}
+
+{% block contenido %}
+    <h2>Bienvenido, {{ nombre }}</h2>
+    <p>Carrera: <strong>{{ carrera }}</strong></p>
+    <p>Esta página fue generada con <strong>Symfony + Twig</strong>.</p>
+{% endblock %}
