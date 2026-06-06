@@ -5,19 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block titulo %}Mi Aplicación{% endblock %}</title>
-    <style>
-        body   { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 1000px; margin: 0 auto; padding: 0; background-color: #f4f7f6; color: #333; }
-        header { background: linear-gradient(135deg, #2c3e50, #3498db); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-        h1     { margin: 0; font-size: 1.6rem; letter-spacing: 1px; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
-        nav a  { color: #ecf0f1; text-decoration: none; margin-left: 25px; font-weight: 500; transition: all 0.3s ease; padding: 8px 15px; border-radius: 20px; }
-        nav a:hover { background: rgba(255,255,255,0.1); color: #fff; }
-        main   { padding: 45px; background: white; margin: 30px auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); min-height: 450px; }
-        table  { width: 100%; border-collapse: collapse; margin-top: 20px; border-radius: 8px; overflow: hidden; }
-        th, td { border: none; padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
-        thead  { background: linear-gradient(135deg, #2c3e50, #3498db); color: white; }
-        th     { text-transform: uppercase; font-size: 0.8rem; background: transparent; }
-        footer { background: linear-gradient(135deg, #2c3e50, #2980b9); color: #ecf0f1; text-align: center; padding: 30px; margin-top: 50px; font-size: 0.9rem; box-shadow: 0 -4px 12px rgba(0,0,0,0.1); }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
     <header>
