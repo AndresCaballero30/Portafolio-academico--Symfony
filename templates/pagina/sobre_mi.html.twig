@@ -4,10 +4,31 @@
 {% block titulo %}Sobre mí{% endblock %}
 
 {% block contenido %}
+    <div class="profile-container">
+        <div class="profile-image">
+            <div class="photo-container">
+                <img src="{{ asset('images/perfil.png') }}" alt="Foto de {{ profile_name|default('Andrés Caballero') }}" class="profile-photo">
+            </div>
+        </div>
+        <div class="profile-info">
+            <h2 class="profile-name">Andres Benjamin Caballero Basagoitia</h2>
+            <p class="profile-career">Ingenieria en sistemas</p>
+            <p class="profile-university">Universidad San Francisco de Asis - Sede La Paz</p>
+            
+            <div class="motivation-section-inline">
+                <h3 class="motivation-title">Mi Motivación</h3>
+                <p class="motivation-text">
+                    Mi objetivo es convertirme en un arquitecto de software capaz de diseñar sistemas escalables y eficientes. 
+                    Me apasiona aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente 
+                    en el ecosistema de PHP y sus frameworks modernos.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <h2>Mis habilidades</h2>
     <p class="skills-description">A lo largo de mi carrera he desarrollado competencias técnicas en diversas tecnologías de desarrollo web.</p>
 
-    {# habilidades es array asociativo: clave = nombre, valor = porcentaje #}
     <div class="skills-grid">
         {% for habilidad_obj in habilidades %}
             <div class="skill-card">
@@ -20,15 +41,6 @@
                 </div>
             </div>
         {% endfor %}
-    </div>
-
-    <div class="motivation-section">
-        <h3 class="motivation-title">Mi Motivación</h3>
-        <p class="motivation-text">
-            Mi objetivo es convertirme en un arquitecto de software capaz de diseñar sistemas escalables y eficientes. 
-            Me apasiona aprender nuevas tecnologías y enfrentar desafíos que me permitan crecer profesionalmente 
-            en el ecosistema de PHP y sus frameworks modernos.
-        </p>
     </div>
 
     <div class="suggestion-box">
