@@ -5,6 +5,15 @@
 
 {% block contenido %}
     <h2>Formulario de Contacto</h2>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" style="margin-bottom: 20px; padding: 15px; border-radius: 6px; border: 1px solid transparent; {{ label == 'success' ? 'background-color: #d4edda; border-color: #c3e6cb; color: #155724;' : 'background-color: #f8d7da; border-color: #f5c6cb; color: #721c24;' }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
     <p style="background:#fff3cd; border:1px solid #ffc107; padding:12px; border-radius:6px; color:#856404; font-size:14px;">
         ⚠ Este formulario es demostrativo. En Symfony el procesamiento requiere el Form Component.
     </p>
