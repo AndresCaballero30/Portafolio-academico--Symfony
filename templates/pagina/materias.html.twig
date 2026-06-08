@@ -5,7 +5,27 @@
 
 {% block contenido %}
     <h2>Materias del semestre</h2>
-    <table>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="filter-container">
+        <form action="{{ path('app_materias') }}" method="POST" class="filter-form">
+            <label for="nota_minima">Filtrar por nota mínima:</label>
+            <input type="number" id="nota_minima" name="nota_minima" value="{{ filtro }}" min="0" max="100" class="filter-input">
+            <button type="submit" class="btn-filter">
+                Aplicar Filtro
+            </button>
+            <a href="{{ path('app_materias') }}" class="filter-clear">Limpiar</a>
+        </form>
+    </div>
+
+    <table class="data-table">
         <thead>
             <tr>
                 <th>Materia</th>
@@ -15,18 +35,20 @@
         </thead>
         <tbody>
             {% for materia in materias %}
-                <tr style="background: {{ loop.index is even ? '#f2f2f2' : 'white' }}">
+                <tr>
                     <td>{{ materia.nombre }}</td>
-                    <td style="text-align:center; font-weight:bold;">
-                        {{ materia.nota | number_format(1) }}
+                    <td class="text-center font-bold">
+                        {{ materia.notaFormateada }}
                     </td>
-                    <td style="text-align:center;">
-                        {{ materia.nota >= 51 ? 'Aprobada' : 'Reprobada' }}
+                    <td class="text-center">
+                        {{ materia.esAprobada() ? 'Aprobada' : 'Reprobada' }}
                     </td>
                 </tr>
             {% else %}
                 <tr>
-                    <td colspan="3">No hay materias registradas.</td>
+                    <td colspan="3" class="empty-row">
+                        No se encontraron materias que coincidan con el filtro.
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
